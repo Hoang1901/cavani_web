@@ -1,0 +1,420 @@
+/*
+Theme Name: MyTheme
+Theme URI: http://remcavani.com
+Author: Hoang
+Author URI: http://remcavani.com
+Description: Đây là theme WordPress tùy chỉnh của tôi.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mytheme
+*/
+
+/* Định dạng header */
+header {
+    display: flex;
+    justify-content: space-between; /* Logo bên trái, menu bên phải */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #26ac45; /* Màu nền header */
+    border-bottom: 2px solid #ddd;
+}
+
+/* Định dạng logo và tiêu đề */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px; /* Điều chỉnh kích thước logo */
+    margin-right: 10px;
+}
+
+.logo-container a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f0f0f0;
+    line-height: 50px; /* Đảm bảo chiều cao chữ khớp với logo */
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Định dạng menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục menu */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #9cc1ea; /* Màu xanh khi hover */
+}
+
+/* Định dạng footer */
+footer {
+    background-color: #26ac45; /* Màu nền footer */
+    padding: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Logo bên trái, thông tin bên phải */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Định dạng logo và tên công ty */
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 50px; /* Điều chỉnh kích thước logo */
+    margin-right: 15px;
+}
+
+.footer-company-name {
+    display: flex;
+    flex-direction: column; /* Hiển thị tên công ty thành 2 dòng */
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+/* Định dạng phần thông tin liên hệ */
+.footer-info {
+    display: flex;
+    flex-direction: column; /* Các dòng xếp thẳng hàng */
+    align-items: flex-start; /* Căn lề trái */
+    text-align: left;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+/* Container chứa cả 3 slider */
+.main-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa các slider */
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* Slider chính giữa */
+.center-slider {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+/* Slider bên trái & phải */
+.side-slider {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Định dạng slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Định dạng từng slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide:first-child {
+    opacity: 1;
+}
+
+/* Định dạng ảnh */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Tạo animation */
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Bố cục 2 cột */
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cột trái: Ảnh banner */
+.home-banner img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Cột phải: Danh sách bài viết */
+.home-posts h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.home-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-posts li {
+    margin-bottom: 10px;
+}
+
+.home-posts a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.home-posts a:hover {
+    color: #007bff;
+}
+
+/* button: xem thêm */
+.home-posts .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #26ac45; /* Màu xanh lá cây */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #f0f0f0;
+    transition: background 0.3s;
+    border: none;
+}
+
+.home-posts .home-button:hover {
+    background-color: #218838; /* Màu xanh đậm hơn khi hover */
+    color: #f0f0f0;
+}
+
+/* home-featured-products */
+.featured-products {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.featured-products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.home-products-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-product-item {
+    width: 200px;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-product-item img {
+    width: 100%;  /* Chiều rộng đầy đủ */
+    aspect-ratio: 1 / 1; /* Đặt tỉ lệ ảnh 1:1 */
+    object-fit: cover; /* Cắt ảnh vừa khung mà không bị méo */
+    border-radius: 5px;
+}
+
+.home-product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.home-product-code {
+    font-size: 14px;
+    color: #666;
+}
+
+.home-more-products {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.home-more-products:hover {
+    background-color: #218838;
+}
+
+/* page-news */
+.page-news-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-news-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.news-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.news-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.news-item a:hover {
+    color: #005177;
+}
+
+.about-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    color: #28a745;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.about-text a {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-text a:hover {
+    color: #005177;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
