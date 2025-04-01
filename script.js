@@ -17,3 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSlider(".side-slider.right");
 });
 
+// product
+document.querySelectorAll('.filter').forEach(filter => {
+    filter.addEventListener('change', function() {
+        let selectedFilters = Array.from(document.querySelectorAll('.filter:checked')).map(f => f.value);
+        document.querySelectorAll('.product').forEach(product => {
+            product.style.display = selectedFilters.length === 0 || selectedFilters.includes(product.dataset.category) ? 'block' : 'none';
+        });
+    });
+});

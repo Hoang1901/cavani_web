@@ -13,7 +13,7 @@
         <!-- Thông tin liên hệ bên phải -->
         <div class="footer-info">
             <p>Hà Nội: Tầng 7, số 134 Phạm Văn Đồng, Bắc Từ Liêm</p>
-            <p>TP.HCM: 95 hàn thuyên, ấp 5, vĩnh lộc B, Bình chánh</p>
+            <p>TP.HCM: 95 hàn thuyên, ấp 5, vĩnh lộc B, Bình Chánh</p>
             <p>Email: bacphuthaigroup@gmail.com - cavaniblinds.2022@gmail.com</p>
             <p>Hotline: 0862817617 - 0352916668</p>
         </div>

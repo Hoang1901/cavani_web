@@ -17,7 +17,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="<?php echo home_url('/products'); ?>">Sản phẩm</a></li>
+                <li><a href="<?php echo home_url('/san-pham'); ?>">Sản phẩm</a></li>
                 <li><a href="<?php echo home_url('/tin-tuc'); ?>">Tin tức</a></li>
                 <li><a href="<?php echo home_url('/ve-chung-toi'); ?>">Về chúng tôi</a></li>
             </ul>
