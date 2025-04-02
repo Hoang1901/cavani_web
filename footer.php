@@ -4,9 +4,7 @@
         <div class="footer-logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/LogoBPTGroup.png" alt="Cavani Blinds">
             <div class="footer-company-name">
-                <span>Công ty Cổ phần Sản xuất</span>
-                <span>và Thương mại Bắc Phú Thái</span>
-                
+                <span>Công ty Cổ phần Sản xuất <br> và Thương mại Bắc Phú Thái</span>
             </div>
         </div>
 

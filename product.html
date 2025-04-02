@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Cavani Blinds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: rgb(26, 172, 69);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .logo {
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        .menu a {
+            font-size: 26px;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .sidebar {
+            width: 20%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .products-container {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+        .product-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 15px 30px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="assets/images/logoCavani.jpg" alt="Cavani Blinds">
+            <span><strong>Cavani Blinds</strong></span>
+        </div>
+        <nav class="menu">
+            <a href="products.html">Sản phẩm</a>
+            <a href="http://localhost/wordpress/tin-tuc/">Tin tức</a>
+            <a href="http://localhost/wordpress/ve-chung-toi/">Về chúng tôi</a>
+        </nav>
+    </header>
+    <div class="main-container">
+        <aside class="sidebar">
+            <h3>Danh mục sản phẩm</h3>
+            <ul>
+                <li><input type="checkbox" name="category" value="rem-cuon" onchange="filterProducts()"> Rèm cuốn</li>
+                <li><input type="checkbox" name="category" value="rem-cau-vong" onchange="filterProducts()"> Rèm cầu vồng</li>
+                <li><input type="checkbox" name="category" value="rem-go" onchange="filterProducts()"> Rèm gỗ</li>
+                <li><input type="checkbox" name="category" value="rem-tu-dong" onchange="filterProducts()"> Rèm tự động</li>            </ul>
+        </aside>
+        <section class="products-container">
+            <div class="product-item" data-category="rem-cuon">
+                <img src="images/products/remcuon/D1-1.jpg" alt="Sản phẩm 1">
+                <h4>Rèm cuốn</h4>
+                <p>Rèm cuốn cao cấp, sang trọng.</p>
+            </div>
+            <div class="product-item" data-category="rem-cau-vong">
+                <img src="images/products/remcauvong/TA1.jpg" alt="Sản phẩm 2">
+                <h4>Rèm cầu vồng</h4>
+                <p>Rèm cầu vồng hiện đại, tiện lợi.</p>
+            </div>
+            <div class="product-item" data-category="rem-go">
+                <img src="images/products/product3.jpg" alt="Sản phẩm 3">
+                <h4>Rèm gỗ</h4>
+                <p>Rèm gỗ tự nhiên, bền đẹp.</p>
+            </div>
+            <div class="product-item" data-category="rem-tu-dong">
+                <img src="images/products/product4.jpg" alt="Sản phẩm 4">
+                <h4>Rèm tự động</h4>
+                <p>Rèm tự động thông minh, tiện lợi.</p>
+            </div>
+            <div class="product-item" data-category="rem-cuon">
+                <img src="images/products/product5.jpg" alt="Sản phẩm 5">
+                <h4>Rèm cuốn</h4>
+                <p>Rèm cuốn hiện đại, dễ sử dụng.</p>
+            </div>
+            <div class="product-item" data-category="rem-cau-vong">
+                <img src="images/products/product6.jpg" alt="Sản phẩm 6">
+                <h4>Rèm cầu vồng</h4>
+                <p>Rèm cầu vồng đa dạng màu sắc.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <img src="assets/images/logoBPTGroup.png" alt="Cavani Blinds">
+            <span>
+                <strong>Công ty cổ phần Sản xuất <br>và Thương mại Bắc Phú Thái</strong>
+            </span>
+        </div>
+        <div>
+            <p>Hà Nội: Tầng 7, số 134 Phạm Văn Đồng, Bắc Từ Liêm</p>
+            <p>TP.HCM: 95 hàn thuyên, ấp 5, vĩnh lộc B, Bình Chánh</p>
+            <p>Email: bacphuthaigroup@gmail.com - cavaniblinds.2022@gmail.com</p>
+            <p>Hotline: 0862817617 - 0352916668</p>
+        </div>
+    </footer>
+    <script>
+        function filterProducts() {
+            const checkboxes = document.querySelectorAll(".sidebar input[type='checkbox']:checked");
+            const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
+            const products = document.querySelectorAll(".product-item");
+            
+            products.forEach(product => {
+                const category = product.getAttribute("data-category");
+                if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

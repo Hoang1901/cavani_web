@@ -76,6 +76,7 @@ footer {
 .footer-container {
     display: flex;
     justify-content: space-between; /* Logo bên trái, thông tin bên phải */
+    text-align: left;
     align-items: center;
     flex-wrap: wrap;
 }
