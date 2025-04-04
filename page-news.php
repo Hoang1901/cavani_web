@@ -19,12 +19,9 @@ get_header(); ?>
                     <a href="<?php the_permalink(); ?>">
                         <?php if (has_post_thumbnail()) : ?>
                             <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-hr-page.jpg" alt="No Image" style="width: 100%; height: auto;">
                         <?php endif; ?>
+                        <h2><?php the_title(); ?></h2>
                     </a>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <p><?php the_excerpt(); ?></p>
                 </div>
             <?php endwhile;
             wp_reset_postdata();

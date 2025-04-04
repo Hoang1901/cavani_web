@@ -1,10 +1,197 @@
 <?php get_header(); ?>
+<style>
+/* Container chứa cả 3 slider */
+.main-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa các slider */
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
+/* Slider chính giữa */
+.center-slider {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+/* Slider bên trái & phải */
+.side-slider {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Định dạng slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Định dạng từng slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide:first-child {
+    opacity: 1;
+}
+
+/* Định dạng ảnh */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Tạo animation */
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+/* Bố cục 2 cột */
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cột trái: Ảnh banner */
+.home-banner img {
+    width: 90%;
+    border-radius: 8px;
+    margin-left: 10%;
+}
+
+/* Cột phải: Danh sách bài viết */
+.home-posts h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.home-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-posts li {
+    margin-bottom: 10px;
+}
+
+.home-posts a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.home-posts a:hover {
+    color: #007bff;
+}
+
+/* button: xem thêm */
+.home-posts .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #26ac45; /* Màu xanh lá cây */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #f0f0f0;
+    transition: background 0.3s;
+    border: none;
+}
+
+.home-posts .home-button:hover {
+    background-color: #218838; /* Màu xanh đậm hơn khi hover */
+    color: #f0f0f0;
+}
+
+/* home-featured-products */
+.featured-products {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.featured-products h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.home-products-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.home-product-item {
+    width: 200px;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 350px; 
+}
+
+.home-product-item img {
+    width: 100%;  
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.home-product-item:hover img{
+	transform: scale(1.2); /* Phóng to ảnh */
+	transition: transform 0.4s ease-in-out; /* Hiệu ứng zoom mượt */
+}
+
+.home-product-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.home-more-products {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    font-size: 20px;
+}
+
+.home-more-products:hover {
+    background-color: #218838;
+}
+</style>
 <div class="home-container">
     <!-- Phần hiển thị 3 ảnh -->
     <div class="main-slider-container">
     <!-- Slider bên trái -->
-    <div class="side-slider left">
+    <div class="side-slider left" style="width: 500px;">
         <div class="slider">
             <?php
             $left_images = array('left1.jpg', 'left2.jpg', 'left3.jpg');
@@ -28,7 +215,7 @@
     </div>
 
     <!-- Slider bên phải -->
-    <div class="side-slider right">
+    <div class="side-slider right" style="width: 500px;">
         <div class="slider">
             <?php
             $right_images = array('right1.jpg', 'right2.jpg', 'right3.jpg');
@@ -44,7 +231,7 @@
     <div class="home-layout">
         <!-- Cột trái: Banner -->
         <div class="home-banner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-banner.jpg" alt="Home Banner">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-banner.jpg" alt="Home Banner"">
         </div>
 
         <!-- Cột phải: Danh sách bài viết -->
@@ -72,13 +259,13 @@
                 endif;
                 ?>
             </ul>
-            <a href="<?php echo site_url('/tin-tuc'); ?>" class="home-button">Xem Thêm</a>
+            <a href="<?php echo site_url('/tin-tuc'); ?>" class="home-button">Xem Thêm Tin Tức</a>
             </div>
     </div>
 
     <!-- Một số sản phẩm nổi bật -->
     <div class="featured-products">
-    <h2>Sản phẩm Nổi Bật</h2>
+    <h2>Sản Phẩm Nổi Bật</h2>
     <div class="home-products-list">
         <div class="home-product-item">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/remcauvong.jpg" alt="Sản phẩm 1">
@@ -97,7 +284,7 @@
             <p class="home-product-name">Rèm không khoan</p>
         </div>
     </div>
-    <a href="#" class="home-more-products">Xem thêm sản phẩm</a>
+    <a href="<?php echo site_url('/san-pham'); ?>" class="home-more-products">Xem thêm sản phẩm</a>
     </div>
 </div>
 
